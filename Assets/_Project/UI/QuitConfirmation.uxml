@@ -1,0 +1,12 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/QuitConfirmation.uss?fileID=7433441132597879392&amp;guid=3fbf51a9cbcf6ed47931df8b80ffc66b&amp;type=3#QuitConfirmation"/>
+    <engine:VisualElement name="ModalBackground" class="modal-background">
+        <engine:VisualElement name="QuitConfirmationPanel" class="quit-confirmation-panel">
+            <engine:Label name="ConfirmationText" text="Do you want to quit the application?" class="confirmation-text"/>
+            <engine:VisualElement name="ButtonContainer" class="button-container">
+                <engine:Button name="BtnYes" text="Yes" class="btn-yes"/>
+                <engine:Button name="BtnNo" text="No" class="btn-no"/>
+            </engine:VisualElement>
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>
