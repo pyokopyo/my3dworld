@@ -1,0 +1,11 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/UI/GlbSelector.uss?fileID=7433441132597879392&amp;guid=&amp;type=3#GlbSelector"/>
+    <engine:VisualElement name="GlbSelectorPanel" class="glb-panel hidden">
+        <engine:Label name="PanelTitle" text="GLBファイル選択" class="glb-panel__title"/>
+        <engine:Label name="FolderLabel" text="" class="glb-panel__folder-label"/>
+        <engine:Button name="RefreshButton" text="フォルダを更新" class="glb-panel__refresh-btn"/>
+        <engine:ScrollView name="GlbScrollView" class="glb-panel__scroll"/>
+        <engine:Label name="StatusLabel" text="" class="glb-panel__status"/>
+        <engine:Button name="CloseButton" text="閉じる" class="glb-panel__close-btn"/>
+    </engine:VisualElement>
+</engine:UXML>

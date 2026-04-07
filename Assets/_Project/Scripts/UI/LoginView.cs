@@ -1,3 +1,4 @@
+using My3DWorld.Player;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -93,6 +94,15 @@ namespace Project.UI
 
             HideError();
             _viewModel?.OnLoginRequested(username);
+
+            // ログイン成功：UIを隠してゲームモードに切り替える
+            if (_uiDocument != null)
+                _uiDocument.rootVisualElement.style.display = UnityEngine.UIElements.DisplayStyle.None;
+
+            if (PlayerController.Instance != null)
+                PlayerController.Instance.LookEnabled = true;
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+            UnityEngine.Cursor.visible = false;
         }
 
         private void OnExitButtonClicked()

@@ -1,3 +1,4 @@
+using My3DWorld.Player;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -74,6 +75,13 @@ namespace Project.UI
         {
             Debug.Log("User cancelled quit.");
             gameObject.SetActive(false);
+            // ESC前にゲームモードだった場合のみ視点操作を復帰（ログイン画面からのESCは復帰しない）
+            if (PlayerController.Instance != null && PlayerController.Instance.LookEnabledBeforeQuit)
+            {
+                PlayerController.Instance.LookEnabled = true;
+                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                UnityEngine.Cursor.visible = false;
+            }
         }
     }
 }

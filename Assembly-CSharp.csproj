@@ -50,15 +50,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Project\Scripts\UI\LoginViewModel.cs" />
+    <Compile Include="Assets\_Project\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\_Project\Scripts\Core\SceneWorkflowManager.cs" />
+    <Compile Include="Assets\_Project\Scripts\Player\CameraFollow.cs" />
+    <Compile Include="Assets\_Project\Scripts\UI\GlbSelectorView.cs" />
+    <Compile Include="Assets\_Project\Scripts\Interfaces\IGlbLoader.cs" />
     <Compile Include="Assets\_Project\Scripts\UI\QuitConfirmationView.cs" />
+    <Compile Include="Assets\_Project\Scripts\IO\LocalFileScanner.cs" />
+    <Compile Include="Assets\_Project\Scripts\Player\IPlayerController.cs" />
     <Compile Include="Assets\_Project\Scripts\UI\LoginView.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\_Project\Scripts\Interfaces\ISceneLoader.cs" />
+    <Compile Include="Assets\_Project\Scripts\World\SpaceGenerator.cs" />
     <Compile Include="Assets\_Project\Scripts\Core\AppBootstrapper.cs" />
+    <Compile Include="Assets\_Project\Scripts\Interfaces\ISpaceGenerator.cs" />
+    <Compile Include="Assets\_Project\Scripts\World\GlbSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\_Project\UI\GlbSelector.uxml" />
     <None Include="Assets\_Project\UI\QuitConfirmation.uxml" />
+    <None Include="Assets\_Project\UI\GlbSelector.uss" />
     <None Include="Assets\_Project\UI\LoginView.uss" />
     <None Include="Assets\_Project\UI\LoginView.uxml" />
     <None Include="Assets\_Project\UI\QuitConfirmation.uss" />
@@ -1140,6 +1151,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="glTFast.Editor">
+      <HintPath>Library\ScriptAssemblies\glTFast.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Rendering.LightTransport.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rendering.LightTransport.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1248,6 +1263,10 @@
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="glTFast.dots">
+      <HintPath>Library\ScriptAssemblies\glTFast.dots.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1346,6 +1365,10 @@
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="glTFast">
+      <HintPath>Library\ScriptAssemblies\glTFast.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">
