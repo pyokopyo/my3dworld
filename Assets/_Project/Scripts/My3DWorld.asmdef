@@ -1,0 +1,19 @@
+{
+    "name": "My3DWorld",
+    "rootNamespace": "My3DWorld",
+    "references": [
+        "Unity.InputSystem",
+        "Unity.ugui",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "glTFast"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

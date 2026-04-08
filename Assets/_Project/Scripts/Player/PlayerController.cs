@@ -26,6 +26,19 @@ namespace My3DWorld.Player
 
         private float _pitch;
 
+        /// <summary>
+        /// ピッチ（上下視点角度）クランプ計算。テスト可能な純粋関数。
+        /// </summary>
+        public static float ClampPitch(float currentPitch, float mouseDeltaY, float min, float max)
+            => Mathf.Clamp(currentPitch - mouseDeltaY, min, max);
+
+        /// <summary>
+        /// ワールド移動ベクトル計算。テスト可能な純粋関数。
+        /// </summary>
+        public static Vector3 CalcMoveVector(Vector3 right, Vector3 forward, float h, float v, float y,
+            float speed, float deltaTime)
+            => (right * h + forward * v + Vector3.up * y) * speed * deltaTime;
+
         void Awake()
         {
             Instance = this;
@@ -50,7 +63,7 @@ namespace My3DWorld.Player
                 if (Keyboard.current.spaceKey.isPressed) y += 1f;
                 if (Keyboard.current.leftCtrlKey.isPressed) y -= 1f;
 
-                Vector3 move = (transform.right * h + transform.forward * v + Vector3.up * y) * moveSpeed * Time.deltaTime;
+                Vector3 move = CalcMoveVector(transform.right, transform.forward, h, v, y, moveSpeed, Time.deltaTime);
                 transform.Translate(move, Space.World);
             }
 
@@ -64,7 +77,7 @@ namespace My3DWorld.Player
                 transform.Rotate(0f, mouseX, 0f);
 
                 // 垂直回転：カメラのみをピッチ（上下）
-                _pitch = Mathf.Clamp(_pitch - mouseY, minPitch, maxPitch);
+                _pitch = ClampPitch(_pitch, mouseY, minPitch, maxPitch);
                 if (cameraTransform != null)
                     cameraTransform.localEulerAngles = new Vector3(_pitch, 0f, 0f);
             }

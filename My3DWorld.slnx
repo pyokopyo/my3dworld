@@ -1,4 +1,6 @@
 ﻿<Solution>
-  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="My3DWorld.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="My3DWorld.Tests.EditMode.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
 </Solution>
