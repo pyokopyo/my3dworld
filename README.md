@@ -1,5 +1,13 @@
 # Scanning Open World (SOW) - v2026.1.1
 
+## ライブデモ
+
+WebGLビルドを以下のURLで公開しています：
+
+- [https://pyokopyokon.com/wp-content/uploads/games/my3dworld/index.html](https://pyokopyokon.com/wp-content/uploads/games/my3dworld/index.html)
+
+> **動作確認済みブラウザ**: Chrome / Edge（WebGL 2.0 対応ブラウザ推奨）
+
 ## プロジェクト概要
 
 Scanning Open World (SOW) は、個人スキャンデータ（.glb/.gltf）を活用したパーソナル3D空間の構築を目的としたUnityプロジェクトです。ユーザーがスキャンした3Dモデルをランタイムでロードし、共有可能な仮想空間を提供します。
