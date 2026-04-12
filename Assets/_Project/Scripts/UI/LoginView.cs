@@ -66,6 +66,19 @@ namespace Project.UI
 
             _loginButton.clicked += OnLoginButtonClicked;
             _exitButton.clicked += OnExitButtonClicked;
+
+            // UIが表示されている間はカーソルを必ず可視にする（全プラットフォーム共通）
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.visible = true;
+
+#if UNITY_WEBGL
+            // WebGL: ブラウザのキーイベントでボタンが意図せず選択されるのを防ぐ
+            _loginButton.focusable = false;
+            _exitButton.focusable = false;
+#endif
+
+            // レイアウト完了後にUsernameFieldをフォーカスしてすぐ入力できるようにする
+            _usernameField.schedule.Execute(() => _usernameField.Focus());
         }
 
         private void OnDisable()

@@ -46,6 +46,16 @@ namespace Project.UI
 
             _btnYes.clicked += OnYesButtonClicked;
             _btnNo.clicked += OnNoButtonClicked;
+
+            // UIが表示されている間はカーソルを必ず可視にする（全プラットフォーム共通）
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.visible = true;
+
+#if UNITY_WEBGL
+            // WebGL: ブラウザのキーイベントでボタンが意図せず選択されるのを防ぐ
+            _btnYes.focusable = false;
+            _btnNo.focusable = false;
+#endif
         }
 
         private void OnDisable()

@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v2026.1.2 - 2026-04-13
+
+### Fixed
+- **WebGLビルドでUI Toolkitの入力が正常に動作しない問題を修正**
+  - UIが開いてもマウスカーソーが表示されなかった問題を修正
+    - `LoginView` / `QuitConfirmationView` / `GlbSelectorView` の `OnEnable()` で `Cursor.visible = true` を設定（全プラットフォーム共通）
+  - キーボードを押すとボタンが選択状態になってしまう問題を修正
+    - WebGLビルド時のみ（`#if UNITY_WEBGL`）ボタンの `focusable = false` を設定し、ブラウザのキーイベントによる意図しないフォーカスを防止
+  - `LoginView` 表示時に `UsernameField` を自動フォーカスし、すぐ入力できるように改善
+
+---
+
 ## v2026.1.1 - 2026-04-08
 
 ### Fixed

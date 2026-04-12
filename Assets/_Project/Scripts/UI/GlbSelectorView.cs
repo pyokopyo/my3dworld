@@ -97,6 +97,12 @@ namespace My3DWorld.UI
 
             if (_refreshButton != null) _refreshButton.clicked += RefreshList;
             if (_closeButton   != null) _closeButton.clicked   += () => SetPanelVisible(false);
+
+#if UNITY_WEBGL
+            // WebGL: ブラウザのキーイベントでボタンが意図せず選択されるのを防ぐ
+            if (_refreshButton != null) _refreshButton.focusable = false;
+            if (_closeButton   != null) _closeButton.focusable   = false;
+#endif
         }
 
         // ── ロジック ─────────────────────────────────────────
@@ -161,6 +167,9 @@ namespace My3DWorld.UI
                     text = Path.GetFileNameWithoutExtension(filePath)
                 };
                 btn.AddToClassList("btn-glb-item");
+#if UNITY_WEBGL
+                btn.focusable = false; // WebGL: キーボードフォーカス無効化
+#endif
                 _scrollView.Add(btn);
             }
         }
